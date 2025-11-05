@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SimliElevenlabs from "@/app/SimliElevenlabs";
 import DottedFace from "./Components/DottedFace";
 import SimliHeaderLogo from "./Components/Logo";
-import Navbar from "./Components/Navbar";
 import Image from "next/image";
 import GitHubLogo from "@/media/github-mark-white.svg";
 
@@ -34,8 +33,6 @@ const Demo: React.FC = () => {
   return (
     <div className="bg-black min-h-screen flex flex-col items-center font-abc-repro font-normal text-sm text-white p-8">
       <SimliHeaderLogo />
-      <Navbar />
-
       <div className="absolute top-[32px] right-[32px]">
         <text
           onClick={() => {
@@ -60,29 +57,16 @@ const Demo: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-[350px] font-thin flex flex-col items-center ">
-        <span className="font-bold mb-[8px] leading-5 ">
-          {" "}
-          Create Simli App — стартовий репозиторій для створення візуальних
-          аватарів із Simli{" "}
-        </span>
-        <ul className="list-decimal list-inside max-w-[350px] ml-[6px] mt-2">
-          <li className="mb-1">
-            Заповніть ключі API ElevenLabs та Simli у файлі .env.
-          </li>
-          <li className="mb-1">
-            Перевірте взаємодію та поспілкуйтеся з аватаром, який озвучується
-            ElevenLabs і візуалізується Simli.
-          </li>
-          <li className="mb-1">
-            Ви можете замінити обличчя та агента аватара на власні, відредагувавши
-            файл <code>app/page.tsx</code>.
-          </li>
-        </ul>
-        <span className=" mt-[16px]">
-          Тепер ви можете розгорнути цей застосунок на Vercel або інтегрувати його
-          до свого чинного проєкту.
-        </span>
+      <div className="max-w-[350px] font-thin flex flex-col items-center text-center gap-2">
+        <p className="font-bold leading-5">
+          ОБ’ЄКТИВНИЙ СТРУКТУРОВАНИЙ ПРАКТИЧНИЙ (КЛІНІЧНИЙ) ІСПИТ.
+        </p>
+        <p className="leading-5">
+          Розпитування. Спілкування із голосовим агентом - Human Digital Twin.
+        </p>
+        <p className="mt-[16px] leading-5">
+          Почніть прийом із запитання до пацієнта
+        </p>
       </div>
     </div>
   );
