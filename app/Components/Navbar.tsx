@@ -10,7 +10,7 @@ export default function Navbar() {
               }}
               className="block cursor-pointer py-2 px-3 text-gray-900 rounded   md:border-0 md:p-0 dark:text-white hover:underline    "
             >
-              Documentation
+              Документація
             </a>
           </li>
           <li>
@@ -20,7 +20,7 @@ export default function Navbar() {
               }}
               className="block cursor-pointer py-2 px-3 text-gray-900 rounded   md:border-0  md:p-0 dark:text-white hover:underline    "
             >
-              Billing
+              Оплата
             </a>
           </li>
           <li>
@@ -30,7 +30,7 @@ export default function Navbar() {
               }}
               className="block cursor-pointer py-2 px-3 text-gray-900 rounded   md:border-0  md:p-0 dark:text-white hover:underline    "
             >
-              Discord
+              Спільнота в Discord
             </a>
           </li>
         </ul>

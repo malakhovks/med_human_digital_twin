@@ -436,7 +436,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
               <IconSparkleLoader className="h-[20px] animate-loader" />
             ) : (
               <span className="font-abc-repro-mono font-bold w-[164px]">
-                Test Interaction
+                Тестова взаємодія
               </span>
             )}
           </button>
@@ -450,7 +450,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
                 )}
               >
                 <span className="font-abc-repro-mono group-hover:text-black font-bold w-[164px] transition-all duration-300">
-                  Stop Interaction
+                  Зупинити взаємодію
                 </span>
               </button>
             </div>
