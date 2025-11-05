@@ -6,15 +6,16 @@ import SimliHeaderLogo from "./Components/Logo";
 import Image from "next/image";
 import GitHubLogo from "@/media/github-mark-white.svg";
 
-interface avatarSettings {
+interface AvatarSettings {
   elevenlabs_agentid: string;
   simli_faceid: string;
 }
 
 // Customize your avatar here
-const avatar: avatarSettings = {
-  elevenlabs_agentid: "YOUR_ELEVENLABS_AGENT_ID", // Replace with your ElevenLabs agent ID
-  simli_faceid: "1c6aa65c-d858-4721-a4d9-bda9fde03141", // Replace with your Simli face ID
+const avatar: AvatarSettings = {
+  elevenlabs_agentid:
+    process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID ?? "ELEVEN-LABS-AGENT-ID",
+  simli_faceid: "5514e24d-6086-46a3-ace4-6a7264e5cb7c", // Replace with your Simli face ID
 };
 
 const Demo: React.FC = () => {
