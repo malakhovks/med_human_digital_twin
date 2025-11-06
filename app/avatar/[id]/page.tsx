@@ -27,14 +27,8 @@ export default function AvatarIframePage() {
 
         <header className="space-y-3">
           <h1 className="text-3xl font-semibold sm:text-4xl">
-            Вбудований аватар Trulience через iFrame
+            Віртуальний пацієнт - Педіатрія
           </h1>
-          <p className="text-base leading-relaxed text-slate-300">
-            Сторінка показує, як додати аватар Trulience на вебсторінку за
-            допомогою iFrame, використовуючи офіційну документацію. Усі
-            налаштування беруться з файлу <code>.env.local</code> і автоматично
-            підставляються у посилання на аватар.
-          </p>
         </header>
 
         {!iframeSrc ? (
@@ -80,33 +74,6 @@ NEXT_PUBLIC_TRULIENCE_TOKEN=your-token`}
                   className="h-[600px] w-full bg-slate-950"
                 />
               </div>
-              <p className="text-sm text-slate-400">
-                Джерело iFrame формується за шаблоном із документації:
-                <code className="mx-2 rounded bg-slate-900 px-2 py-1 text-xs text-sky-200">
-                  https://www.trulience.com/avatar/&lt;ваш-id&gt;?token=&lt;ваш-token&gt;
-                </code>
-                . Значення підставляються зі змінних середовища.
-              </p>
-            </section>
-
-            <section className="grid gap-4 rounded-3xl border border-slate-800 bg-slate-900/60 p-8 text-slate-200">
-              <h2 className="text-2xl font-semibold text-white">
-                Корисні поради
-              </h2>
-              <ul className="list-disc space-y-3 pl-6 text-sm leading-relaxed text-slate-300">
-                <li>
-                  Надайте доступ до камери та мікрофона у браузері, щойно з’явиться
-                  запит.
-                </li>
-                <li>
-                  Ви можете налаштовувати вигляд чату за допомогою параметрів
-                  запиту, описаних в офіційній документації Trulience.
-                </li>
-                <li>
-                  Використовуйте безпечне зберігання токенів та оновлюйте їх у
-                  разі зміни прав доступу.
-                </li>
-              </ul>
             </section>
           </>
         )}
