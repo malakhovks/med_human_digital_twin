@@ -23,12 +23,12 @@ export default function HomePage() {
             Trulience
           </p>
           <h1 className="text-4xl font-semibold sm:text-5xl">
-            Вбудовуйте аватари Trulience за допомогою iFrame
+            ОБ’ЄКТИВНИЙ СТРУКТУРОВАНИЙ ПРАКТИЧНИЙ (КЛІНІЧНИЙ) ІСПИТ.
+            Розпитування. Спілкування із голосовим агентом - Human Digital Twin.
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Приклад Next.js показує найпростіший спосіб додати Trulience-аватара
-            на сторінку, використовуючи рекомендації з офіційної документації.
-            Усі параметри для iFrame налаштовуються через змінні середовища.
+            Тернопільський національний медичний університет імені І. Я.
+            Горбачевського
           </p>
         </header>
 
@@ -47,7 +47,7 @@ export default function HomePage() {
                   {avatar.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300">
-                  Відкрити демо
+                  Перейдіть на сторінку демо
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
