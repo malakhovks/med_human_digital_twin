@@ -5,7 +5,7 @@ WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN apk add --no-cache libc6-compat \
   && corepack enable \
-  && npm install -g pnpm@9
+  && corepack prepare pnpm@9 --activate
 
 FROM base AS deps
 COPY package.json pnpm-lock.yaml ./
