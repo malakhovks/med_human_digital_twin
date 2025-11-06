@@ -19,6 +19,34 @@ export default function AvatarPage() {
   const trulienceRef = useRef<any>(null);
   const [remoteStream, setRemoteStream] = useState<MediaStream | null>(null);
 
+  useEffect(() => {
+    const titlesToRemove = [
+      "Документація",
+      "Оплата",
+      "Спільнота в Discord",
+    ];
+
+    const removeElementsByTitle = () => {
+      titlesToRemove.forEach((title) => {
+        document
+          .querySelectorAll(`[title="${title}"]`)
+          .forEach((element) => element.remove());
+      });
+    };
+
+    removeElementsByTitle();
+
+    const observer = new MutationObserver(() => {
+      removeElementsByTitle();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const eventCallbacks = {
     "websocket-connect": () => {
       console.log("Trulience websocket connected, attaching stream");
@@ -240,7 +268,7 @@ export default function AvatarPage() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-8 gap-6">
-      <h1 className="text-3xl font-bold">Trulience ElevenLabs Demo</h1>
+      <h1 className="text-3xl font-bold">Демонстрація Trulience і ElevenLabs</h1>
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={startSession}
@@ -248,10 +276,10 @@ export default function AvatarPage() {
           disabled={connected || connecting}
         >
           {connected
-            ? "Connected"
+            ? "Підключено"
             : connecting
-            ? "Connecting..."
-            : "Start Session"}
+            ? "З'єднання..."
+            : "Розпочати взаємодію з автаром"}
         </button>
       </div>
       <div className="absolute inset-0">
@@ -291,7 +319,11 @@ export default function AvatarPage() {
             : "bg-blue-600 hover:bg-blue-700"
         }`}
       >
-        {connected ? "Disconnect" : connecting ? "Connecting..." : "Connect"}
+        {connected
+          ? "Від'єднатись"
+          : connecting
+          ? "З'єднання..."
+          : "Під'єднатися"}
       </button>
 
       {connected && (
@@ -303,7 +335,7 @@ export default function AvatarPage() {
                 ? "bg-red-500 hover:bg-red-600"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}
-            title={isMicMuted ? "Unmute Microphone" : "Mute Microphone"}
+            title={isMicMuted ? "Увімкнути мікрофон" : "Вимкнути мікрофон"}
           >
             {isMicMuted ? (
               <MicOff className="w-5 h-5" />
@@ -318,7 +350,7 @@ export default function AvatarPage() {
                 ? "bg-red-500 hover:bg-red-600"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}
-            title={isSpeakerMuted ? "Unmute Speaker" : "Mute Speaker"}
+            title={isSpeakerMuted ? "Увімкнути динамік" : "Вимкнути динамік"}
           >
             {isSpeakerMuted ? (
               <VolumeX className="w-5 h-5" />
