@@ -26,7 +26,7 @@ export default function AvatarIframePage() {
         </Link>
 
         <header className="space-y-3">
-          <h1 className="text-3xl font-semibold sm:text-4xl">
+          <h1 className="text-3xl font-semibold text-center sm:text-4xl">
             Віртуальний пацієнт - Педіатрія
           </h1>
         </header>

@@ -24,7 +24,7 @@ export default function HomePage() {
           </p>
           <h1 className="text-4xl font-semibold sm:text-5xl">
             ОБ’ЄКТИВНИЙ СТРУКТУРОВАНИЙ ПРАКТИЧНИЙ (КЛІНІЧНИЙ) ІСПИТ.
-            Розпитування. Спілкування із голосовим агентом - Human Digital Twin.
+            Розпитування.
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
             Тернопільський національний медичний університет імені І. Я.
