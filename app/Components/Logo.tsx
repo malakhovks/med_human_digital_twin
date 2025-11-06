@@ -25,7 +25,7 @@ const SimliHeaderLogo = ({ className, children }: Props) => {
 
   return (
     <div className={cn('fixed top-[32px] left-[32px] cursor-pointer', className)} onClick={handleClick}>
-      <Image src={logo} className='Logo' alt='Simli logo' />
+      <Image src={logo} className='Logo' alt='Логотип Simli' />
     </div>
   );
 };

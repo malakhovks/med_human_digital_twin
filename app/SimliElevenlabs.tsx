@@ -323,12 +323,12 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
 
       websocket.onerror = (error) => {
         console.error("ElevenLabs WebSocket error:", error);
-        setError("WebSocket connection failed");
+        setError("Не вдалося встановити з’єднання WebSocket");
         setIsLoading(false);
       };
     } catch (error) {
       console.error("Failed to connect to ElevenLabs:", error);
-      setError(`Failed to connect: ${error}`);
+      setError(`Помилка підключення: ${error}`);
       setIsLoading(false);
     }
   };
@@ -366,7 +366,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
       await simliClient?.start();
     } catch (error: any) {
       console.error("Error starting interaction:", error);
-      setError(`Error starting interaction: ${error.message}`);
+      setError(`Помилка запуску взаємодії: ${error.message}`);
       setIsLoading(false);
     }
   }, [agentId, onStart]);
@@ -435,8 +435,8 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
             {isLoading ? (
               <IconSparkleLoader className="h-[20px] animate-loader" />
             ) : (
-              <span className="font-abc-repro-mono font-bold w-[164px]">
-                Test Interaction
+              <span className="font-abc-repro-mono font-bold w-[164px] text-center">
+                Розпочати взаємодію з автаром
               </span>
             )}
           </button>
@@ -450,7 +450,7 @@ const SimliElevenlabs: React.FC<SimliElevenlabsProps> = ({
                 )}
               >
                 <span className="font-abc-repro-mono group-hover:text-black font-bold w-[164px] transition-all duration-300">
-                  Stop Interaction
+                  Завершити взаємодію
                 </span>
               </button>
             </div>
