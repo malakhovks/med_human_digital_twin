@@ -8,7 +8,7 @@ export default function DottedFace(props: any) {
         <div className="flex justify-center items-center">
            <Image 
                 src={dottedface} 
-                alt="loading..." 
+                alt="Завантаження аватара..."
                 width={350}
                 height={350}
             />
