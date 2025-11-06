@@ -1,11 +1,16 @@
 import Link from "next/link";
 
-const avatarIds = [
+const avatarId = process.env.NEXT_PUBLIC_TRULIENCE_AVATAR_ID;
+const token = process.env.NEXT_PUBLIC_TRULIENCE_TOKEN;
+const isConfigured = Boolean(avatarId && token);
+
+const avatarCards = [
   {
-    id: "default",
-    name: "Демонстрація аватара",
-    description:
-      "Перегляньте приклад інтеграції Trulience з ElevenLabs у режимі реального часу.",
+    id: "iframe",
+    name: "Вбудований аватар через iFrame",
+    description: isConfigured
+      ? "Перейдіть на сторінку демо, щоб побачити вашого аватара Trulience у вікні iFrame."
+      : "Додайте ідентифікатор аватара та токен у .env.local, щоб активувати демо.",
   },
 ];
 
@@ -15,20 +20,20 @@ export default function HomePage() {
       <div className="mx-auto flex max-w-4xl flex-col gap-12 px-6 py-16">
         <header className="space-y-6 text-center">
           <p className="text-sm uppercase tracking-widest text-slate-400">
-            Trulience + ElevenLabs
+            Trulience
           </p>
           <h1 className="text-4xl font-semibold sm:text-5xl">
-            Інтерактивні аватари у вашому браузері
+            Вбудовуйте аватари Trulience за допомогою iFrame
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Цей приклад Next.js демонструє, як підключити аватари Trulience до
-            розмовного ШІ ElevenLabs. Оберіть аватара, щоб розпочати сесію та
-            протестувати голосову взаємодію.
+            Приклад Next.js показує найпростіший спосіб додати Trulience-аватара
+            на сторінку, використовуючи рекомендації з офіційної документації.
+            Усі параметри для iFrame налаштовуються через змінні середовища.
           </p>
         </header>
 
         <section className="grid gap-6 sm:grid-cols-2">
-          {avatarIds.map((avatar) => (
+          {avatarCards.map((avatar) => (
             <Link
               key={avatar.id}
               href={`/avatar/${avatar.id}`}
@@ -62,19 +67,24 @@ export default function HomePage() {
 
         <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-sm text-slate-400">
           <p>
-            Перед запуском сесії переконайтеся, що додали значення
+            Перед запуском демо переконайтеся, що у файлі
             <code className="mx-1 rounded bg-slate-800 px-1.5 py-0.5 text-xs text-sky-200">
-              NEXT_PUBLIC_ELEVENLABS_AGENT_ID
+              .env.local
+            </code>
+            вказані значення змінних
+            <code className="mx-1 rounded bg-slate-800 px-1.5 py-0.5 text-xs text-sky-200">
+              NEXT_PUBLIC_TRULIENCE_AVATAR_ID
             </code>
             та
             <code className="mx-1 rounded bg-slate-800 px-1.5 py-0.5 text-xs text-sky-200">
               NEXT_PUBLIC_TRULIENCE_TOKEN
             </code>
-            у файл <code>.env.local</code>. Потім надайте доступ до мікрофона, коли
-            браузер попросить про це.
+            . Після зміни значень перезапустіть локальний сервер і надайте доступ
+            до камери та мікрофона, коли браузер попросить про це.
           </p>
         </footer>
       </div>
     </main>
   );
 }
+
